@@ -6,14 +6,13 @@ func main() {
 	ConferenceName := "go conference" //Synatic Sugar   :variable creation
 	const ConferenceTickets int = 50  //declaring constants
 	var remainingTickets int = 50
+	var bookings [50]string
 
 	fmt.Printf("conferenceTickets is %T, remainingTickets is %T conferenceName is %T\n", ConferenceTickets, remainingTickets, ConferenceName)
 
 	fmt.Printf("Welcome to %v booking application\n", ConferenceName)
 	fmt.Printf("We have total of %v tickets and %v are still avaiable.\n", ConferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
-
-	var bookings = [50]string{"Nana", "Nicole", "peter"}
 
 	var firstName string
 	var lastName string
@@ -33,6 +32,12 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - userTickets
+	bookings[0] = firstName + " " + lastName
+
+	fmt.Printf("The whole array: %v\n", bookings)
+	fmt.Printf("The first value: %v\n", bookings[0])
+	fmt.Printf("Array type: %T\n", bookings)
+	fmt.Printf("Array length: %v\n", len(bookings))
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, ConferenceName)
